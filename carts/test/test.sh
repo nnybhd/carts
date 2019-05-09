@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-main_function() {
-
 set -ev
 
 SCRIPT_DIR=`dirname "$0"`
@@ -36,5 +34,3 @@ $DOCKER_CMD run \
 	    -e COMMIT=$COMMIT \
 	    test-container \
 	    sh -c "export PYTHONPATH=\$PYTHONPATH:\$PWD/test ; python test/$@"
-}
-main_function 2>&1 tee -a /tmp/test_script.log
